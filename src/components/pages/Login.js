@@ -2,7 +2,6 @@ import axios from "axios"
 import { useContext, useState } from "react"
 import UserContext from "../../context/UserContext"
 import {Link, useNavigate} from 'react-router-dom'
-import styled from "styled-components"
 
 export default function Login (){
     const [email, setEmail] = useState("")
@@ -36,9 +35,3 @@ export default function Login (){
     )
 }
 
-const Button = styled.button`
-    background-color: #A328D6;
-    color: white;
-    font-size: 20px;
-    border-radius: 5px;
-`
