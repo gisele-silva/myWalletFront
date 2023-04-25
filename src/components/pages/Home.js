@@ -6,13 +6,13 @@ import axios from 'axios';
 export default function Home() {
   const { usuario } = useContext(UserContext);
   const [transacao, setTransacao] = useState([]);
-
+  console.log(usuario.data.token)
   useEffect(() => {
     async function pegarTransacao() {
       try {
         const { data } = await axios.get('http://localhost:5000/transacao', {
           headers: {
-            Authorization: `Bearer ${usuario.token}`
+            Authorization: `Bearer ${usuario.data.token}`
           }
         });
         console.log(data);

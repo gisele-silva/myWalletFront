@@ -7,7 +7,7 @@ export default function Saida() {
   const [value, setValue] = useState('');
   const [descricao, setDescricao] = useState('');
 
-  const { user } = useContext(UserContext);
+  const { usuario } = useContext(UserContext);
   const navigator = useNavigate();
 
   async function handleSubmit(e) {
@@ -18,7 +18,7 @@ export default function Saida() {
       value: parseFloat(value)
     };
     const headers = {
-      headers: { Authorization: `Bearer ${user.token}` }
+      headers: { Authorization: `Bearer ${usuario.token}` }
     };
     try {
       await axios.post('http://localhost:5000/transacao', body, headers);
