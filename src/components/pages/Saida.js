@@ -18,11 +18,11 @@ export default function Saida() {
       value: parseFloat(value)
     };
     const headers = {
-      headers: { Authorization: `Bearer ${usuario.token}` }
+      headers: { Authorization: `Bearer ${usuario.data.token}` }
     };
     try {
       await axios.post('http://localhost:5000/transacao', body, headers);
-      alert('Registro realizado com sucesso!');
+      alert('Saída realizada com sucesso!');
       navigator('/home');
     } catch (error) {
       console.log(error);

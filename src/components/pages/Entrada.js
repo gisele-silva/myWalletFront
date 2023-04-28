@@ -12,10 +12,11 @@ export default function Entrada (){
     async function salvarEntrada (e){
         e.preventDefault()
         const body = {descricao, value: parseFloat(value), type:"entrada"}
-        const headers = {headers: {Authorization: `Bearer ${usuario.token}`}}
+        const headers = {headers: {Authorization: `Bearer ${usuario.data.token}`}}
 
         try {
             await axios.post("http://localhost:5000/transacao", body, headers)
+            alert('Entrada realizada com sucesso!');
             navigator("/home")
         } catch (error) {
             console.log(error)
