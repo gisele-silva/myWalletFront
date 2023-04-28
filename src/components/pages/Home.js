@@ -27,9 +27,14 @@ export default function Home() {
 
     pegarTransacao();
   }, []);
+  
+  let apenasTransacoes = transacoes.transacoes
+  const nome = transacoes.usuario.nome
+  console.log("transacoess", apenasTransacoes)
+  console.log("nomee", nome)
 
   function renderizaTransacoes() {
-    return transacoes.map((t, index) => (
+    return apenasTransacoes.map((t, index) => (
       <p key={index} style={t.type === 'entrada' ? { color: 'green' } : { color: 'red' }}>
         {t.createAt} | {t.descricao} | {t.value}
       </p>
@@ -57,7 +62,7 @@ export default function Home() {
       <p>Olá {usuario.nome}</p>
       <Link to="/"> Sair </Link>
       <div style={{ backgroundColor: 'white', width: 200, height: 250 }}>
-        {transacoes.length > 0 ? (
+        {apenasTransacoes.length > 0 ? (
           <p style={{ color: 'gray', fontSize: 12 }}>
             Minhas transacoes
             <p>{renderizaTransacoes()}</p>
@@ -67,7 +72,7 @@ export default function Home() {
             não há registros de entrada e saída
           </span>
         )}
-        <h4>Saldo: {pegaSaldo()}</h4>
+        <h4 style={{ color: 'black', fontSize: 12 }}>Saldo: {pegaSaldo()}</h4>
       </div>
       <p>
         <Link to="/cadastrar-entrada">Nova Entrada</Link> |{' '}
