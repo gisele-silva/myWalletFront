@@ -27,8 +27,6 @@ export default function Home() {
 
     pegarTransacao();
   }, []);
-console.log("nome", transacoes.usuario.nome)
-console.log("transacoes", transacoes.transacoes)
 
   function renderizaTransacoes() {
     return transacoes.transacoes.map((t, index) => (
@@ -56,10 +54,10 @@ console.log("transacoes", transacoes.transacoes)
 
   return (
     <div className="">
-      <p>Olá</p>
+      <p>Olá </p>
       <Link to="/"> Sair </Link>
       <div style={{ backgroundColor: 'white', width: 200, height: 250 }}>
-        {transacoes.transacoes.length > 0 ? (
+        {transacoes.transacoes?.length > 0 ? (
           <p style={{ color: 'gray', fontSize: 12 }}>
             Minhas transacoes
             <p>{renderizaTransacoes()}</p>
