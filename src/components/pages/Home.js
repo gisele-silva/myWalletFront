@@ -38,8 +38,8 @@ export default function Home() {
   }
 
   function pegaSaldo() {
-    if (transacoes.length > 0) {
-      return transacoes.reduce((antigo, atual) => {
+    if (transacoes.transacoes?.length > 0) {
+      return transacoes.transacoes.reduce((antigo, atual) => {
         if (atual.type === 'entrada') {
           return antigo + atual.value;
         }
@@ -47,14 +47,14 @@ export default function Home() {
         return antigo - atual.value;
       }, 0);
     } else {
-      return 0;
+      return 10;
     }
   }
 
 
   return (
     <div className="">
-      <p>Olá </p>
+      <p>Olá</p>
       <Link to="/"> Sair </Link>
       <div style={{ backgroundColor: 'white', width: 200, height: 250 }}>
         {transacoes.transacoes?.length > 0 ? (
